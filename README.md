@@ -141,7 +141,7 @@ Where:
 - $X \beta_2$ is the behaviour part
 - $q$ is the behaviour variable
 
-$$(\hat{\beta}_1,\hat{\beta}_2)=\arg\min_{\beta_1,\beta_2}\Bigg\{-\sum_{i=1}^n w_i\Big[y_i\log\sigma(z_i)+(1-y_i)\log(1-\sigma(z_i))\Big]+\lambda\Big(\|D_1\beta_1+d_1\|_2^2+\|D_2\beta_2+d_2\|_2^2\Big)\Big\} + \lambda_{behaviour} \sum_{i=1}^n (h_i^2)$$
+$$(\hat{\beta}_1,\hat{\beta}_2)=\arg\min_{\beta_1,\beta_2}\Big\{-\sum_{i=1}^n w_i\Big[y_i\log\sigma(z_i)+(1-y_i)\log(1-\sigma(z_i))\Big]+\lambda\Big(\|D_1\beta_1+d_1\|_2^2+\|D_2\beta_2+d_2\|_2^2\Big)\Big\} + \lambda_{behaviour} \sum_{i=1}^n (h_i^2)$$
 
 Where:
 - $z_i = x_{1i}^\top\beta_1 + q_i\,(x_{2i}^\top\beta_2),\qquad\sigma(z)=\frac{1}{1+e^{-z}}$

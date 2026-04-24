@@ -104,7 +104,7 @@ It supports:
 
 The predictions are computed via:
 
-$\eta = g(X\beta)$
+$\eta = X\beta, \qquad \mu = g^{-1}(\eta)$
 
 Given a design matrix $X \in \mathbb{R}^{n \times p}$ and a response vector $y \in \mathbb{R}^{n}$, the model estimates coefficients $\beta \in \mathbb{R}^{p}$ by minimizing a penalized negative log-likelihood:
 
@@ -140,25 +140,9 @@ Where:
 - $X\beta_1$ is the non-behaviour part
 - $X \beta_2$ is the behaviour part
 - $q$ is the behaviour variable
-$$
-(\hat{\beta}_1, \hat{\beta}_2)
-=
-\arg\min_{\beta_1,\beta_2}
-\left\{
--\sum_{i=1}^n w_i
-\left[
-y_i \log \sigma(z_i)
-+
-(1-y_i)\log\!\left(1-\sigma(z_i)\right)
-\right]
-+\lambda\left(
-\lVert D_1 \beta_1 + d_1 \rVert_2^2
-+
-\lVert D_2 \beta_2 + d_2 \rVert_2^2
-\right)
-+\lambda_{\text{behaviour}} \sum_{i=1}^n h_i^2
-\right\}.
-$$
+
+
+$$(\hat{\beta}_1, \hat{\beta}_2)=\arg\min_{\beta_1,\beta_2}\left\{-\sum_{i=1}^n w_i\left[y_i \log \sigma(z_i)+(1-y_i)\log\!\left(1-\sigma(z_i)\right)\right]+\lambda\left(\lVert D_1 \beta_1 + d_1 \rVert_2^2+\lVert D_2 \beta_2 + d_2 \rVert_2^2\right)+\lambda_{\text{behaviour}} \sum_{i=1}^n h_i^2\right\}.$$
 
 Where:
 - $z_i = x_{1i}^\top\beta_1 + q_i\,(x_{2i}^\top\beta_2),\qquad\sigma(z)=\frac{1}{1+e^{-z}}$

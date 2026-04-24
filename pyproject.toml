@@ -1,0 +1,27 @@
+[project]
+name = "lepto"
+version = "0.1.0"
+dependencies = ["numpy>=2.0.2",
+                "pandas>=2.3",
+                "scikit-learn>=1.6.1",
+                "plotly>=6.2.0",
+                "folium>=0.20.0",
+                "streamlit>=1.52.0",
+                "streamlit_folium>=0.26.1",
+                "pyarrow>=19.0.1",
+                "nbformat>=4.2.0"]
+license = {text = "MIT"}
+
+readme = "README.md"
+authors = [{name = "Lepto solutions"}]
+requires-python = ">=3.8"
+
+[project.scripts]
+lepto-app = "lepto.gui.Lepto_GUI:run_app"
+
+[tool.setuptools.package-data]
+lepto = ["data/*.npy", "data/*.json", "data/*.csv"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"

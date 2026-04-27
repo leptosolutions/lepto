@@ -162,6 +162,7 @@ y_i \log \sigma(z_i)
 \right)
 + \lambda_{\text{behaviour}} \sum_{i=1}^n h_i^2
 \right\}
+``
 
 Where:
 - $z_i = x_{1i}^\top\beta_1 + q_i\,(x_{2i}^\top\beta_2),\qquad\sigma(z)=\frac{1}{1+e^{-z}}$
